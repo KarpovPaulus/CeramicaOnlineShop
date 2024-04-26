@@ -1,0 +1,39 @@
+﻿@model Register
+<form method="post">
+    <div class="row">
+        <h2>Регистрация</h2>
+
+        <div class="text-danger font-weight-bold" asp-validation-summary="All"></div>
+        <div class="col">
+            <div>
+                <label asp-for="UserName">Введите логин</label><br />
+                <input name="UserName" /> <br />
+                <span asp-validation-for="UserName" class="text-danger"></span> <br />
+            </div>
+
+            <div>
+                <label asp-for="Password">Введите пароль</label><br />
+                <input name="Password" /> <br />
+                <span asp-validation-for="Password" class="text-danger"></span> <br />
+            </div>
+
+            <div>
+                <label asp-for="ConfirmPassword">Подтвердите пароль</label><br />
+                <input name="ConfirmPassword" /> <br />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span> <br />
+            </div>
+
+            <div>
+                <label asp-for="Phone">Введите телефон</label><br />
+                <input name="Phone" /> <br />
+                <span asp-validation-for="Phone" class="text-danger"></span> <br />
+            </div>
+            
+            <br />
+            <button class="btn btn-success type="submit" asp-controller="Account" asp-action="Register">Зарегестрироваться</button>
+            <br />   
+        </div>
+        
+    </div>
+   
+</form>

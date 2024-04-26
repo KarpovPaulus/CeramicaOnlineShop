@@ -1,0 +1,29 @@
+﻿@model UserAccount
+
+<div class="row">
+    <div class="col-6">
+        <table class="table">
+            <tr>
+                <td>Логин</td>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <td>Телефон</td>
+                <td>@Model.Phone</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br />
+
+
+<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        Действия
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="ChangePassword" asp-route-name="@Model.Name">Смена пароля</a></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Edit" asp-route-id="@Model.Name">Редактировать данные</a></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="EditRights" asp-route-id="@Model.Name">Права доступа</a></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Delete" asp-route-id="@Model.Name">Удалить пользователя</a></li>
+    </ul>
+

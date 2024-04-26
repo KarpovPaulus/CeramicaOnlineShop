@@ -1,0 +1,55 @@
+﻿@model List<Product>
+<div class="row">
+    @await Html.PartialAsync("AdminLeftMenu")
+
+    <div class="col-9">
+    <div class="row"><h3>Список продуктов</h3></div><br />
+
+    <a class="btn btn-success"
+        asp-area="Admin"
+        asp-controller="Product"
+        asp-action="Add"
+        role="button">Добавить продукт</a><br />
+
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(int i = 0; i < Model.Count;i++)
+                {
+                    <tr>
+                        <td>@(i+1)</td>
+                        <td>@Model[i].Name</td>
+                        <td>@Model[i].Cost</td>
+                        <td></td>
+                        <td>
+                            <a class="btn btn-success" 
+                             asp-area="Admin"
+                             asp-controller="Product"
+                             asp-action="Edit"
+                             asp-route-productId="@Model[i].Id"
+                             role="button">Редактировать</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-success" 
+                             asp-area="Admin"
+                             asp-controller="Product"
+                             asp-action="Remove"
+                             asp-route-productId="@Model[i].Id"
+                             role="button">Удалить</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

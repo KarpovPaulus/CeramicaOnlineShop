@@ -1,0 +1,24 @@
+﻿@model Role
+<form method="post">
+    <div class="row">
+        <h2>Создание новой роли</h2>
+
+        <div class="text-danger font-weight-bold" asp-validation-summary="ModelOnly"></div>
+        <div class="col">
+            <div>
+                <label asp-for="Name">Название товара</label><br />
+                <input name="Name" /> <br />
+                <span asp-validation-for="Name" class="text-danger"></span> <br />
+            </div>
+
+            <br />
+            <button class="btn btn-success type="submit"
+                asp-area="Admin"
+                asp-controller="Role"
+                asp-action="Add">Создать</button>
+            <br />
+        </div>
+
+    </div>
+
+</form>
